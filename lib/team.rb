@@ -49,4 +49,20 @@ class Team
   def details
     {"total_value" => self.total_value, "player_count" => self.player_count}
   end
+
+  def average_cost_of_player
+    cost = 0
+    roster.each do |player|
+      cost += player.total_cost
+    end
+    cost = cost.to_f / player_count
+  end
+
+  def players_by_last_name
+    players = roster.map do |player|
+      player.last_name
+    end
+  end
+
+
 end
