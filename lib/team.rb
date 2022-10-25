@@ -24,6 +24,8 @@ class Team
         player
       end
     end
+    long_term_players.delete(nil)
+    long_term_players
   end
 
   def short_term_players
@@ -32,6 +34,8 @@ class Team
         player
       end
     end
+    short_term_players.delete(nil)
+    short_term_players
   end
 
   def total_value
@@ -39,6 +43,7 @@ class Team
     roster.each do |player|
       value += player.total_cost
     end
+    value
   end
 
   def details
