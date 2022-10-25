@@ -12,5 +12,13 @@ RSpec.describe Team do
     expect(team.roster).to eq([])
   end
 
+  it 'can add players to roster' do
+    team = Team.new("Angry Unicorns", "Atlantis")
+    player = Player.new("Tobias Kingler", 1, 36)
+    team.add_player(player)
+
+    expect(team.roster).to eq([player])
+  end
+
 
 end
